@@ -1,0 +1,51 @@
+<!DOCTYPE html><html><head><meta content="text/html; charset=utf-8" http-equiv=Content-Type><meta charset=utf-8><title>首页</title><meta name=description content=""><meta name=keywords content=""><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"><meta name=apple-mobile-web-app-capable content=yes><meta name=apple-mobile-web-app-status-bar-style content=black><meta name=format-detection content="telephone=no"><script>(function(doc, win) {
+            var zzTime;
+            var weixing = 'no';
+            var dpr, rem, scale, docEl = doc.documentElement,
+                fontEl = doc.createElement("style"),
+                metaEl = doc.querySelector('meta[name="viewport"]'),
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize'
+            var u = (win.navigator.appVersion.match(/android/gi), win.navigator.appVersion.match(/iphone/gi));
+            dpr = win.devicePixelRatio || 1;
+
+            if (u && win.devicePixelRatio >= 3) {
+                dpr = 1;
+            } else if (win.devicePixelRatio >= 2) {
+                dpr = 1;
+            } else {
+                dpr = 1;
+            };
+
+            var rstCli = function() {
+                rem = docEl.clientWidth * dpr / 7.5;
+                scale = 1 / dpr;
+                //          metaEl.setAttribute("content", "width=" + dpr * docEl.clientWidth + ",initial-scale=" + scale + ",maximum-scale=" + scale + ", minimum-scale=" + scale + ",user-scalable=" + weixing);
+                //          docEl.setAttribute("data-dpr", dpr);
+                docEl.firstElementChild.appendChild(fontEl);
+                // fontEl.innerHTML = "html{font-size:" + rem + "px!important;}";
+            }
+
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, rstCli, false);
+            doc.addEventListener('DOMContentLoaded', rstCli, false);
+
+            win.rem2px = function(a) {
+                a = parseFloat(a);
+                return a * rem
+            };
+            win.px2rem = function(a) {
+                a = parseFloat(a);
+                return a / rem
+            };
+
+
+            function isWeiXin() {
+                var ua = window.navigator.userAgent.toLowerCase();
+                if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+                    return 'no';
+                } else {
+                    return 'yes';
+                }
+            }
+
+        })(document, window)</script><link href=/static/css/app.cd29bffdfd12fd3a672461ae8392cc85.css rel=stylesheet></head><body class=nui-body><div id=app></div><script type=text/javascript src=/static/js/manifest.29d0318427c297e0bae2.js></script><script type=text/javascript src=/static/js/app.2d40c2709db064668472.js></script></body></html>
